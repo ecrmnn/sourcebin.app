@@ -159,7 +159,7 @@ export default {
     },
   },
 
-  created() {
+  mounted() {
     // Detect click event outside dropdown
     if (process.client) {
       const self = this;
