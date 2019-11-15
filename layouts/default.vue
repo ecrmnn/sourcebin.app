@@ -15,13 +15,23 @@ import Theme from '../components/navigation/theme.vue';
 import Save from '../components/navigation/save.vue';
 
 export default {
+  computed: {
+    mode() {
+      return this.$store.state.mode;
+    },
+
+    theme() {
+      return this.$store.state.theme;
+    },
+  },
+
   mounted() {
     if (process.client) {
       window.editor = window.CodeMirror.fromTextArea(document.getElementById('editor'), {
         lineNumbers: true,
         lineWrapping: false,
-        mode: 'javascript',
-        theme: 'dracula',
+        mode: this.mode,
+        theme: this.theme,
         styleActiveLine: true,
       });
 
@@ -35,6 +45,7 @@ export default {
       window.editor.refresh();
     }
   },
+
   components: {
     Language,
     Theme,

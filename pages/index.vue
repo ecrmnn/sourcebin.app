@@ -23,7 +23,7 @@ export default {
             window.CodeMirror.autoLoadMode(window.editor, response.data.mode);
           })
           .catch(() => {
-            //
+            window.location.href = '/';
           });
       }
     }

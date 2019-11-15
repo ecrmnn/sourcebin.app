@@ -1,6 +1,6 @@
 exports.state = () => ({
-  theme: '',
-  mode: '',
+  theme: 'dracula',
+  mode: 'javascript',
 });
 
 exports.mutations = {
