@@ -5,6 +5,8 @@ exports.handler = (event, context, callback) => {
 
   if (event.httpMethod === 'POST') {
     const data = JSON.parse(event.body);
+
+    response.data = data;
   }
 
   return callback(null, {

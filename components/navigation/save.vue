@@ -14,9 +14,9 @@ export default {
   methods: {
     save() {
       axios.post(netlifyFunction('save'), {
-        mode: 'javascript',
-        theme: 'dracula',
-        body: 'const name = "daniel";',
+        mode: window.editor.getOption('mode'),
+        theme: window.editor.getOption('theme'),
+        body: window.editor.getValue(),
       }).then((response) => {
         console.log(response);
       }).catch((err) => {
