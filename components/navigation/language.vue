@@ -180,6 +180,7 @@ export default {
     setLanguage(language) {
       this.selected = language;
       window.editor.setOption('mode', language);
+      window.CodeMirror.autoLoadMode(window.editor, language);
     },
   },
 };

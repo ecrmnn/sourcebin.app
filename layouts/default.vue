@@ -22,6 +22,7 @@ export default {
         lineWrapping: false,
         mode: 'javascript',
         theme: 'dracula',
+        styleActiveLine: true,
       });
 
       window.editor.setSize('100%', `${window.innerHeight}px`);
