@@ -27,7 +27,6 @@ export default {
     return {
       toggled: false,
       query: '',
-      selected: '',
       themes: [
         'ambiance-mobile',
         '3024-day',
@@ -95,6 +94,10 @@ export default {
   },
 
   computed: {
+    selected() {
+      return this.$store.state.theme;
+    },
+
     filteredThemes() {
       return this.themes.filter((theme) => theme.includes(this.query));
     },
@@ -110,8 +113,6 @@ export default {
           self.toggled = false;
         }
       });
-
-      this.selected = window.editor.getOption('theme');
     }
   },
 
@@ -121,7 +122,7 @@ export default {
     },
 
     setTheme(theme) {
-      this.selected = theme;
+      this.$store.commit('setTheme', { theme });
       window.editor.setOption('theme', theme);
       window.editor.refresh();
     },

@@ -17,6 +17,9 @@ export default {
             window.editor.setOption('mode', response.data.mode);
             window.editor.setOption('theme', response.data.theme);
 
+            this.$store.commit('setMode', { mode: response.data.mode });
+            this.$store.commit('setTheme', { theme: response.data.theme });
+
             window.CodeMirror.autoLoadMode(window.editor, response.data.mode);
           })
           .catch(() => {

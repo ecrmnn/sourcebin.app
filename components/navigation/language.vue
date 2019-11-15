@@ -27,7 +27,6 @@ export default {
     return {
       toggled: false,
       query: '',
-      selected: '',
       languages: [
         'apl',
         'asciiarmor',
@@ -154,6 +153,10 @@ export default {
   },
 
   computed: {
+    selected() {
+      return this.$store.state.mode;
+    },
+
     filteredLanguages() {
       return this.languages.filter((language) => language.includes(this.query));
     },
@@ -169,8 +172,6 @@ export default {
           self.toggled = false;
         }
       });
-
-      this.selected = window.editor.getOption('mode');
     }
   },
 
@@ -180,7 +181,7 @@ export default {
     },
 
     setLanguage(language) {
-      this.selected = language;
+      this.$store.commit('setMode', { mode: language });
       window.editor.setOption('mode', language);
       window.CodeMirror.autoLoadMode(window.editor, language);
     },
