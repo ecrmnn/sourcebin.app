@@ -7,23 +7,13 @@
 </template>
 
 <script>
-// import ky from 'ky';
 import axios from 'axios';
+import netlifyFunction from '../../n';
 
 export default {
   methods: {
-    async save() {
-      // const d = await ky.post('http://localhost:9000/save', {
-      //   json: {
-      //     mode: 'javascript',
-      //     theme: 'dracula',
-      //     body: 'const name = "daniel";',
-      //   },
-      // }).json();
-
-      // console.log(d);
-
-      axios.post('http://localhost:9000/save', {
+    save() {
+      axios.post(netlifyFunction('save'), {
         mode: 'javascript',
         theme: 'dracula',
         body: 'const name = "daniel";',

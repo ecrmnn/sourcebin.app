@@ -1,6 +1,8 @@
-.vscode
-.idea
-.nuxt
+/.vscode
+/.idea
+/.nuxt
+/dist
+/functions/dist
 node_modules
 .npm-debug.log
 npm-debug.log
