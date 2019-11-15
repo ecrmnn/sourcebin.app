@@ -4,6 +4,8 @@ export default {
       { src: '/codemirror.js' },
       { src: '/mode/javascript/javascript.js' },
       { src: '/addon/mode/loadmode.js' },
+      { src: '/addon/mode/simple.js' },
+      { src: '/addon/mode/overlay.js' },
       { src: '/addon/selection/active-line.js' },
     ],
     link: [{
