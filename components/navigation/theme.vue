@@ -27,7 +27,7 @@ export default {
     return {
       toggled: false,
       query: '',
-      selected: 'dracula',
+      selected: '',
       themes: [
         'ambiance-mobile',
         '3024-day',
@@ -110,6 +110,8 @@ export default {
           self.toggled = false;
         }
       });
+
+      this.selected = window.editor.getOption('theme');
     }
   },
 

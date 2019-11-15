@@ -16,6 +16,8 @@ export default {
             window.editor.setValue(response.data.body);
             window.editor.setOption('mode', response.data.mode);
             window.editor.setOption('theme', response.data.theme);
+
+            window.CodeMirror.autoLoadMode(window.editor, response.data.mode);
           })
           .catch(() => {
             //

@@ -27,7 +27,7 @@ export default {
     return {
       toggled: false,
       query: '',
-      selected: 'javascript',
+      selected: '',
       languages: [
         'apl',
         'asciiarmor',
@@ -169,6 +169,8 @@ export default {
           self.toggled = false;
         }
       });
+
+      this.selected = window.editor.getOption('mode');
     }
   },
 
