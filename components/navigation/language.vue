@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="bg-black text-xs opacity-25 text-white py-2 px-4 rounded focus:outline-none"
+    <button class="bg-black text-xs text-white py-2 px-4 rounded focus:outline-none"
       @click="toggle">
       {{ selected }}
     </button>
