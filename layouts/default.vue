@@ -15,6 +15,25 @@ import Theme from '../components/navigation/theme.vue';
 import Save from '../components/navigation/save.vue';
 
 export default {
+  mounted() {
+    if (process.client) {
+      window.editor = window.CodeMirror.fromTextArea(document.getElementById('editor'), {
+        lineNumbers: true,
+        lineWrapping: false,
+        mode: 'javascript',
+        theme: 'dracula',
+      });
+
+      window.editor.setSize('100%', `${window.innerHeight}px`);
+
+      document.getElementsByClassName('CodeMirror')[0].classList.add(
+        'text-xl',
+        'leading-loose',
+      );
+
+      window.editor.refresh();
+    }
+  },
   components: {
     Language,
     Theme,

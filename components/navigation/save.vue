@@ -18,7 +18,7 @@ export default {
         theme: window.editor.getOption('theme'),
         body: window.editor.getValue(),
       }).then((response) => {
-        console.log(response);
+        window.location.href = `/${response.data.id}`;
       }).catch((err) => {
         console.log(err);
       });

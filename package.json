@@ -25,8 +25,10 @@
     "nvm-guard": "^1.0.4"
   },
   "dependencies": {
+    "aws-sdk": "^2.572.0",
     "axios": "^0.19.0",
     "ky": "^0.15.0",
-    "netlify-lambda": "^1.6.3"
+    "netlify-lambda": "^1.6.3",
+    "shortid": "^2.2.15"
   }
 }

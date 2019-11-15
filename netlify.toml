@@ -1,2 +1,3 @@
 [build]
+  command = "npm run generate && npm run lambda:build"
   functions = "functions/dist/"
