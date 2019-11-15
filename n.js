@@ -1,9 +1,7 @@
 export default (functionName) => {
-  console.log('hei');
-
-  if (process.env.NETLIFY) {
-    return `/.netlify/functions/${functionName}`;
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return `http://localhost:9000/${functionName}`;
   }
 
-  return `http://localhost:9000/${functionName}`;
+  return `/.netlify/functions/${functionName}`;
 };

@@ -8,11 +8,12 @@
 
 <script>
 import axios from 'axios';
+import netlifyFunction from '../../n';
 
 export default {
   methods: {
     save() {
-      axios.post('/.netlify/functions/save', {
+      axios.post(netlifyFunction('save'), {
         mode: 'javascript',
         theme: 'dracula',
         body: 'const name = "daniel";',
