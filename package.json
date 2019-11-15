@@ -1,0 +1,32 @@
+{
+  "name": "codeshare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nvm-guard && nuxt",
+    "build": "nvm-guard && nuxt build",
+    "start": "nvm-guard && nuxt start",
+    "generate": "nvm-guard && nuxt generate",
+    "lambda:serve": "nvm-guard && netlify-lambda serve functions",
+    "lambda:build": "nvm-guard && netlify-lambda build functions",
+    "postinstall": "nvm-guard"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^1.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-vue": "^6.0.1",
+    "nuxt": "^2.10.2",
+    "nvm-guard": "^1.0.4"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "ky": "^0.15.0",
+    "netlify-lambda": "^1.6.3"
+  }
+}
