@@ -12,7 +12,7 @@ import axios from 'axios';
 export default {
   methods: {
     save() {
-      axios.post('/.netlify/functions/dist/save', {
+      axios.post('/.netlify/functions/save', {
         mode: 'javascript',
         theme: 'dracula',
         body: 'const name = "daniel";',
