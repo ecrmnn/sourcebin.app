@@ -10,17 +10,25 @@
     "generate": "nvm-guard && nuxt generate",
     "lambda:serve": "nvm-guard && netlify-lambda serve functions",
     "lambda:build": "nvm-guard && netlify-lambda build functions",
-    "postinstall": "nvm-guard"
+    "postinstall": "nvm-guard",
+    "eslint": "eslint --ext=vue .",
+    "posttest": "npm run eslint",
+    "test": "nvm-guard && mocha test/tests.js --require esm",
+    "deploy": "npm test && npm run generate && npm run lambda:build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.2.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "chai": "^4.2.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-vue": "^6.0.1",
+    "esm": "^3.2.25",
+    "mocha": "^6.2.2",
     "nuxt": "^2.10.2",
     "nvm-guard": "^1.0.4"
   },
