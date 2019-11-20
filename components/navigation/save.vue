@@ -19,7 +19,7 @@ export default {
         body: window.editor.getValue(),
       }).then((response) => {
         window.location.href = `/?q=${response.data.id}`;
-      }).catch((err) => {
+      }).catch(() => {
         //
       });
     },
